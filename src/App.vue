@@ -1,5 +1,5 @@
 <script setup>
-import useFlutterwave from "./composables/useFlutterwave.ts";
+import useFlutterwaveInline from "./composables/useFlutterwaveInline.ts";
 
 const { checkOut } = useFlutterwave(
   "FLWPUBK_TEST-6d848b45138f2522487c1d4389976d86-X"

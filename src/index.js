@@ -1,6 +1,6 @@
-import useFlutterwave from "./composables/useFlutterwave"
+import useFlutterwaveInline from "./composables/useFlutterwaveInline"
 
 
 export {
-    useFlutterwave
+    useFlutterwaveInline
 }
