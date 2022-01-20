@@ -2,6 +2,8 @@ import { useScriptTag } from '@vueuse/core'
 import { unref } from 'vue'
 
 export default function useFlutterwave(KEY) {
+    if(!unref(KEY)) throw new Error("Please provide a valid Flutterwave public key");
+
     const PUBLIC_KEY = unref(KEY);
     const checkOut = (options: Object) => window.FlutterwaveCheckout({
         publicKey: PUBLIC_KEY,
@@ -19,7 +21,6 @@ export default function useFlutterwave(KEY) {
         checkOut,
         load,
         unload,
-        scriptTag
     }
 
 }

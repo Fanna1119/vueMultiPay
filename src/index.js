@@ -1,6 +1,6 @@
-import HelloWorld from './components/HelloWorld.vue';
+import useFlutterwave from "./composables/useFlutterwave"
 
 
 export {
-    HelloWorld
+    useFlutterwave
 }
