@@ -1,9 +1,35 @@
 <script setup>
 import useFlutterwaveInline from "./composables/useFlutterwaveInline.ts";
+import usePaypal from "./composables/usePaypal.ts";
 
-const { checkOut } = useFlutterwave(
+usePaypal({
+  "client-id": "test",
+  env: "sandbox",
+  currency: "USD",
+  amount: "100",
+  email: "",
+  name: "",
+  description: "",
+  onSuccess: (data) => {
+    console.log(data);
+  },
+  onError: (data) => {
+    console.log(data);
+  },
+});
+
+
+
+
+
+
+
+const { checkOut } = useFlutterwaveInline(
   "FLWPUBK_TEST-6d848b45138f2522487c1d4389976d86-X"
 );
+
+
+
 
 function payWithFlutterwave() {
   checkOut({
@@ -37,6 +63,11 @@ function payWithFlutterwave() {
     },
   });
 }
+
+
+
+
+
 </script>
 
 <template>

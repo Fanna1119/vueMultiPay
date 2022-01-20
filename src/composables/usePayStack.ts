@@ -1,13 +1,13 @@
 import { useScriptTag } from '@vueuse/core'
 import { unref } from 'vue'
 
-export default function usePaypal(params: any) {
+export default function usePayStack(params: any) {
     const PARAMS = new URLSearchParams(unref(params));
     useScriptTag(
-        `https://www.paypal.com/sdk/js?${PARAMS.toString()}`,
+        `https://js.paystack.co/v1/inline.js`,
         // on script tag loaded.
         (el: HTMLScriptElement) => {
-            console.log(el)
+            
         },
         {
             manual: false
